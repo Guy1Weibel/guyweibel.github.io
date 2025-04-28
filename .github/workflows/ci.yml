@@ -42,7 +42,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build with MkDocs
         run: mkdocs build --verbose # Builds the site into the 'site' 
-directory
+#directory
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
