@@ -35,7 +35,12 @@ theme:
     - content.code.annotate
 
 extra_css:
+  - https://unpkg.com/aos@2.3.1/dist/aos.css
   - stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/aos@2.3.1/dist/aos.js
+  - js/extra.js
 
 # Extensions for Markdown features
 markdown_extensions:
