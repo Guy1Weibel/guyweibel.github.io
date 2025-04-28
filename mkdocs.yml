@@ -1,47 +1,61 @@
-# Project information
 site_name: Guy Weibel - Data Science Portfolio
-# site_url: https://Guy1Weibel.github.io/
+site_url: https://Guy1Weibel.github.io/
 
 site_author: Guy Weibel
 site_description: A portfolio showcasing my data science projects.
 
-repo_url: https://github.com/yourusername/your-repo-name/ # Your repo URL
-repo_name: Guy1Weibel/home         # Your repo shorthand
-# edit_uri: edit/main/docs/ # Where source files live relative to repo root
+repo_url: https://github.com/Guy1Weibel/guyweibel.github.io
+repo_name: Guy1Weibel/guyweibel.github.io # Use the full repo name for 
 
 # Theme Configuration
 theme:
-  name: material # Use the Material theme
-  palette: # Example color scheme (customize as you like)
+  name: material
+  font:
+    text: Georgia, serif
+    code: Roboto Mono
+  palette:
+    - scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/brightness-7 # Icon to switch TO light mode
+        name: Switch to light mode
     - scheme: default
-      primary: indigo # Or choose another color like blue, teal, etc.
+      primary: indigo
       accent: pink
+      toggle:
+        icon: material/brightness-4 # Icon to switch TO dark mode
+        name: Switch to dark mode
   features:
-    - navigation.tabs # Top-level sections as tabs
-    - navigation.sections # Expandable sections in sidebar
-    - navigation.top # Back-to-top button
-    - search.suggest # Search suggestions
-    - content.code.copy # Copy button for code blocks
-    - content.code.annotate # Code annotation feature
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css
 
 # Extensions for Markdown features
 markdown_extensions:
-  - admonition # Adds styled blocks like notes, warnings
-  - pymdownx.details # Collapsible blocks
-  - pymdownx.highlight: # Code highlighting
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences # Advanced code/content fencing
-  - toc: # Table of contents generation
-      permalink: true # Adds links to headings
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - attr_list
 
-# Navigation Structure (Define your site pages here!)
+# Navigation Structure
 nav:
   - Home: index.md
   - About Me: about.md
   - Projects:
-      - Overview: projects/index.md # An optional overview page for projects
+      - Overview: projects/index.md
       - Project Alpha: projects/project_alpha.md
       - Project Beta: projects/project_beta.md
       # Add more projects here as projects/your_project_name.md
