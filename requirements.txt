@@ -1,0 +1,3 @@
+mkdocs>=1.4 # Use version compatible with your setup
+mkdocs-material>=9.0 # Use version compatible with your setup
+# Add any other python packages needed by mkdocs plugins here

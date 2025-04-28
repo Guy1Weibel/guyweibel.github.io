@@ -1,1 +1,49 @@
-site_name: My Docs
+# Project information
+site_name: Guy Weibel - Data Science Portfolio
+# site_url: https://Guy1Weibel.github.io/
+
+site_author: Guy Weibel
+site_description: A portfolio showcasing my data science projects.
+
+repo_url: https://github.com/yourusername/your-repo-name/ # Your repo URL
+repo_name: Guy1Weibel/home         # Your repo shorthand
+# edit_uri: edit/main/docs/ # Where source files live relative to repo root
+
+# Theme Configuration
+theme:
+  name: material # Use the Material theme
+  palette: # Example color scheme (customize as you like)
+    - scheme: default
+      primary: indigo # Or choose another color like blue, teal, etc.
+      accent: pink
+  features:
+    - navigation.tabs # Top-level sections as tabs
+    - navigation.sections # Expandable sections in sidebar
+    - navigation.top # Back-to-top button
+    - search.suggest # Search suggestions
+    - content.code.copy # Copy button for code blocks
+    - content.code.annotate # Code annotation feature
+
+# Extensions for Markdown features
+markdown_extensions:
+  - admonition # Adds styled blocks like notes, warnings
+  - pymdownx.details # Collapsible blocks
+  - pymdownx.highlight: # Code highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences # Advanced code/content fencing
+  - toc: # Table of contents generation
+      permalink: true # Adds links to headings
+
+# Navigation Structure (Define your site pages here!)
+nav:
+  - Home: index.md
+  - About Me: about.md
+  - Projects:
+      - Overview: projects/index.md # An optional overview page for projects
+      - Project Alpha: projects/project_alpha.md
+      - Project Beta: projects/project_beta.md
+      # Add more projects here as projects/your_project_name.md
+  - Resume: resume.md
+  - Contact: contact.md
