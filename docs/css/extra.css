@@ -3,16 +3,15 @@
 body {
   background-color: #e0e0e0; /* Fallback */
   background-image: url('../images/tile_pattern.jpg');
-  background-repeat: repeat;
   background-attachment: fixed; /* Keeps pattern fixed on scroll */
-
+  background-repeat: repeat;
   overscroll-behavior-y: none; /* Add this line */
 }
 
 /* Styling the main content container */
 .md-main__inner {
   background-color: #354741; /* User's chosen dark green */
-  max-width: 1350px; /* Adjust width as needed */
+  max-width: 1250px; /* Adjust width as needed */
   margin-left: auto;
   margin-right: auto;
   padding: 1rem 1.5rem; /* Padding inside the container */
@@ -20,8 +19,8 @@ body {
   border-radius: 8px;
   position: relative;
   z-index: 1;
-  margin-top: 2rem; /* Space above */
-  margin-bottom: 2rem; /* Space below */
+  margin-top: 1rem; /* Space above */
+  margin-bottom: 1rem; /* Space below */
 }
 
 /* Padding for the content article *inside* the container */
@@ -50,4 +49,24 @@ body {
 /* Utility class for centering text */
 .text-center {
   text-align: center !important;
+}
+
+.welcome-main-title {
+  font-size: 2.8em; /* Adjust this value for desired size of "Welcome!". Default h1 is around 2em. */
+  margin-bottom: 0.1em; /* Reduces space directly after "Welcome!" */
+  line-height: 1.2; /* Adjust if text wraps awkwardly due to large font size */
+}
+
+.welcome-subtitle {
+  margin-top: 0.1em;    /* Reduces space before "I'm Guy Weibel" and "Welcome to my website" */
+  margin-bottom: 0.1em; /* Reduces space after "I'm Guy Weibel" */
+  line-height: 1.2;     /* Adjust if text wraps awkwardly */
+  /* Optional: If you want these subtitles to be a different font size than default h1 */
+  /* font-size: 1.8em; */ /* Example: makes them slightly smaller */
+}
+
+/* This class is specifically for "Welcome to my website" */
+.last-intro-line {
+  /* We want a bit more space after this line, before the image */
+  margin-bottom: 1em; /* Adjust this value for the space before your image. */
 }
