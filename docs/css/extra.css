@@ -3,77 +3,141 @@
 body {
   background-color: #e0e0e0; /* Fallback */
   background-image: url('../images/tile_pattern.jpg');
-  background-attachment: fixed; /* Keeps pattern fixed on scroll */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position; center center;
-  overscroll-behavior-y: none; /* Add this line */
+  background-position: center center;
+  overscroll-behavior-y: none;
 }
 
 /* Styling the main content container */
 .md-main__inner {
-  background-color: #354741; /* User's chosen dark green */
-  max-width: 1250px; /* Adjust width as needed */
+  background-color: #354741;
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem 1.5rem; /* Padding inside the container */
+  padding: 1rem 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   position: relative;
   z-index: 1;
-  margin-top: 1rem; /* Space above */
-  margin-bottom: 1rem; /* Space below */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-/* Padding for the content article *inside* the container */
+/* --- STYLES FOR THE CONTACT PAGE --- */
+
+@font-face {
+  font-family: 'RetroPixel';
+  src: url('../fonts/press2P.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.md-main__inner:has(h1#contact) {
+  background-image: url('../images/contact/orangemail.png');
+  background-color: transparent !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 0 !important;
+  min-height: 90vh; /* Adjusted for potentially larger fonts, tweak as needed */
+}
+
+.md-main__inner:has(h1#contact) .md-content__inner {
+  padding: 3rem 2.5rem;
+  color: #000000 !important;
+  font-weight: bold !important;
+  font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
+  text-align: Left;
+  font-size: 1.8em !important; /* Base font size for contact page text, ~80% larger. Adjust as needed. */
+                                /* e.g., 2em for double, 1.5em for 50% larger */
+}
+
+.md-main__inner:has(h1#contact) .md-content__inner h1 {
+  color: #000000 !important;
+  font-weight: bold !important;
+  font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
+  text-align: center; /* this is the header */
+  margin-bottom: 1.5em !important; /* Reduced space after heading for tighter look if font is big */
+  font-size: 2.2em !important;   /* Larger heading font size. This is relative to the parent's 1.8em.
+                                     So effectively 2.2 * 1.8 = ~3.96 times the site's base font.
+                                     Adjust to make it visually "double" its original look. */
+}
+
+.md-main__inner:has(h1#contact) .md-content__inner p {
+  color: #000000 !important;
+  font-weight: bold !important;
+  font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
+  margin-bottom: 1em !important; /* Space between paragraphs */
+  line-height: 1.4 !important;   /* Adjust line height if text feels too cramped or too spaced out */
+  /* font-size: inherit; */ /* Paragraphs will inherit the 1.8em from .md-content__inner */
+}
+
+.md-main__inner:has(h1#contact) .md-content__inner a {
+  color: #000000 !important;
+  font-weight: bold !important;
+  font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
+  text-decoration: underline !important;
+  /* font-size: inherit; */ /* Links will inherit the 1.8em from .md-content__inner */
+}
+
+.md-main__inner:has(h1#contact) .md-content__inner a:hover {
+  color: #333333 !important;
+  text-decoration: underline !important;
+}
+
+/* --- Global Styles (Apply Everywhere) --- */
+
+/* Hide the permalink symbol (¶) on hover for all headers */
+.headerlink {
+  visibility: hidden !important; /* Hides it but keeps space */
+  /* display: none !important; */  /* Hides it and removes space - try this if visibility leaves a gap */
+}
+/* Optional: If you want it to appear only when the header itself is hovered, not the link area */
+/*
+h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink,
+h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
+  visibility: visible !important;
+}
+*/
+
+
+/* General padding for content article */
 .md-content__inner {
-   padding: 1rem;
+   padding: 1rem; /* This general rule will be overridden by contact page specific rule */
 }
 
 /* --- Hide specific theme elements --- */
-
-/* Attempt to hide the active navigation list item (e.g., "Home") */
-.md-nav__item--active {
-    display: none !important;
-}
-
-/* Hide the Table of Contents sidebar container */
-.md-nav--secondary {
-    display: none;
-}
-
-/* Hide the "Made with Material for MkDocs" footer text */
+.md-nav__item--active,
+.md-nav--secondary,
 .md-copyright {
     display: none !important;
 }
-
 
 /* Utility class for centering text */
 .text-center {
   text-align: center !important;
 }
 
+/* ... Welcome section styles ... */
 .welcome-main-title {
-  font-size: 2.8em; /* Adjust this value for desired size of "Welcome!". Default h1 is around 2em. */
-  margin-bottom: 0.1em; /* Reduces space directly after "Welcome!" */
-  line-height: 1.2; /* Adjust if text wraps awkwardly due to large font size */
+  font-size: 2.8em;
+  margin-bottom: 0.1em;
+  line-height: 1.2;
 }
 
 .welcome-subtitle {
-  margin-top: 0.1em;    /* Reduces space before "I'm Guy Weibel" and "Welcome to my website" */
-  margin-bottom: 0.1em; /* Reduces space after "I'm Guy Weibel" */
-  line-height: 1.2;     /* Adjust if text wraps awkwardly */
-  /* Optional: If you want these subtitles to be a different font size than default h1 */
-  /* font-size: 1.8em; */ /* Example: makes them slightly smaller */
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  line-height: 1.2;
 }
 
-/* This class is specifically for "Welcome to my website" */
 .last-intro-line {
-  /* We want a bit more space after this line, before the image */
-  margin-bottom: 1em; /* Adjust this value for the space before your image. */
+  margin-bottom: 1em;
 }
 
+/* ... Card styles ... */
 .md-typeset .grid.cards > ul > li {
-  background-color: #a4ada3; /* Your desired card background color */
-  /* The existing border and hover shadow effect from the theme should still apply */
+  background-color: #a4ada3;
 }
