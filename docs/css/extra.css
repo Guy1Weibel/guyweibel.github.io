@@ -35,13 +35,15 @@ body {
 }
 
 .md-main__inner:has(h1#contact) {
-  background-image: url('../images/contact/orangemail.png');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    url('../images/contact/orangemail.png');
   background-color: transparent !important;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
   padding: 0 !important;
-  min-height: 90vh; /* Adjusted for potentially larger fonts, tweak as needed */
+  min-height: 90vh;
 }
 
 .md-main__inner:has(h1#contact) .md-content__inner {
@@ -49,29 +51,25 @@ body {
   color: #000000 !important;
   font-weight: bold !important;
   font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
-  text-align: Left;
-  font-size: 1.8em !important; /* Base font size for contact page text, ~80% larger. Adjust as needed. */
-                                /* e.g., 2em for double, 1.5em for 50% larger */
+  text-align: left;
+  font-size: 1.8em !important;
 }
 
 .md-main__inner:has(h1#contact) .md-content__inner h1 {
   color: #000000 !important;
   font-weight: bold !important;
   font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
-  text-align: center; /* this is the header */
-  margin-bottom: 1.5em !important; /* Reduced space after heading for tighter look if font is big */
-  font-size: 2.2em !important;   /* Larger heading font size. This is relative to the parent's 1.8em.
-                                     So effectively 2.2 * 1.8 = ~3.96 times the site's base font.
-                                     Adjust to make it visually "double" its original look. */
+  text-align: center;
+  margin-bottom: 1.5em !important;
+  font-size: 2.2em !important;
 }
 
 .md-main__inner:has(h1#contact) .md-content__inner p {
   color: #000000 !important;
   font-weight: bold !important;
   font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
-  margin-bottom: 1em !important; /* Space between paragraphs */
-  line-height: 1.4 !important;   /* Adjust line height if text feels too cramped or too spaced out */
-  /* font-size: inherit; */ /* Paragraphs will inherit the 1.8em from .md-content__inner */
+  margin-bottom: 1em !important;
+  line-height: 1.4 !important;
 }
 
 .md-main__inner:has(h1#contact) .md-content__inner a {
@@ -79,7 +77,6 @@ body {
   font-weight: bold !important;
   font-family: 'RetroPixel', 'Courier New', Courier, monospace !important;
   text-decoration: underline !important;
-  /* font-size: inherit; */ /* Links will inherit the 1.8em from .md-content__inner */
 }
 
 .md-main__inner:has(h1#contact) .md-content__inner a:hover {
@@ -87,25 +84,105 @@ body {
   text-decoration: underline !important;
 }
 
+/* --- HEADER CUSTOMIZATIONS --- */
+
+/* Hide the textual site name in the header */
+.md-header__title .md-header__topic {
+  display: none !important;
+}
+
+/* Define a target height for header items for alignment */
+:root {
+  --header-item-target-height: 2.6rem; /* Adjust this value as the master height */
+}
+
+/* Logo Styling */
+.md-header__button.md-logo {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove padding, height will control size */
+  height: var(--header-item-target-height); /* Use target height */
+  min-width: var(--header-item-target-height); /* Ensure it has some width for clickability */
+  order: -2;
+  margin-left: 0.4rem;
+  margin-right: 1rem; /* Space between logo and tabs */
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.8rem; /* Visual size of SVG, adjust if needed */
+  width: auto;
+  display: block;
+}
+
+/* Tabs Container */
+.md-header .md-tabs {
+  order: -1;
+  display: flex; /* It's already a flex container for its items */
+  align-items: center; /* Align tab items vertically */
+  height: var(--header-item-target-height); /* Make tabs container same height */
+}
+
+/* Individual Tab Links - CRITICAL FOR ALIGNMENT */
+.md-tabs__item .md-tabs__link {
+  height: var(--header-item-target-height); /* Make each link fill the target height */
+  display: flex !important;       /* Use flex to center text within this height */
+  align-items: center !important; /* Vertically center the text node */
+  padding: 0 0.6rem !important;   /* Adjust horizontal padding, remove vertical */
+  margin: 0;                   /* Remove any default margins on the link itself */
+  line-height: normal !important; /* Reset line-height that might interfere */
+}
+
+/* Search Component */
+.md-search {
+  order: 1;
+  margin-left: auto;
+  margin-right: 0.4rem;
+  display: flex;
+  align-items: center; /* Center items within the search component */
+  height: var(--header-item-target-height); /* Make search component same height */
+}
+
+/* Styling the search input and button for vertical alignment */
+.md-search__input {
+  height: calc(var(--header-item-target-height) - 0.4rem); /* Make input slightly smaller than container */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.1rem; /* Fine tune text position in input */
+  padding-bottom: 0.1rem;
+}
+.md-search__icon { /* If there's a search icon button */
+  height: var(--header-item-target-height);
+  display: flex;
+  align-items: center;
+}
+
+
+/* Overall alignment for direct children of the header bar */
+.md-header__inner {
+  align-items: center !important; /* Center children vertically */
+  /* height: var(--header-item-target-height); */ /* Optionally set explicit height for the whole bar */
+}
+
+
+/* Optional: Hide custom logo in sticky header if page title is preferred */
+/* .md-header--lifted .md-header__button.md-logo { display: none; } */
+
+/* Optional: If logo serves as home link, hide "Home" tab */
+/* nav.md-tabs__list > .md-tabs__item:first-child { display: none !important; } */
+
 /* --- Global Styles (Apply Everywhere) --- */
+/* ... (rest of your CSS remains the same) ... */
 
 /* Hide the permalink symbol (¶) on hover for all headers */
 .headerlink {
-  visibility: hidden !important; /* Hides it but keeps space */
-  /* display: none !important; */  /* Hides it and removes space - try this if visibility leaves a gap */
+  visibility: hidden !important;
 }
-/* Optional: If you want it to appear only when the header itself is hovered, not the link area */
-/*
-h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink,
-h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
-  visibility: visible !important;
-}
-*/
-
 
 /* General padding for content article */
 .md-content__inner {
-   padding: 1rem; /* This general rule will be overridden by contact page specific rule */
+   padding: 1rem;
 }
 
 /* --- Hide specific theme elements --- */
@@ -120,7 +197,6 @@ h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
   text-align: center !important;
 }
 
-/* ... Welcome section styles ... */
 .welcome-main-title {
   font-size: 2.8em;
   margin-bottom: 0.1em;
@@ -137,7 +213,6 @@ h4:hover .headerlink, h5:hover .headerlink, h6:hover .headerlink {
   margin-bottom: 1em;
 }
 
-/* ... Card styles ... */
 .md-typeset .grid.cards > ul > li {
   background-color: #a4ada3;
 }

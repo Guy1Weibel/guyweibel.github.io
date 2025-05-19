@@ -4,12 +4,14 @@ site_url: https://guy1weibel.github.io/
 site_author: Guy Weibel
 site_description: A portfolio showcasing my data science projects.
 
-repo_url: https://github.com/Guy1Weibel/guyweibel.github.io
-repo_name: Guy1Weibel/guyweibel.github.io
+# repo_url: https://github.com/Guy1Weibel/guyweibel.github.io  # <-- COMMENTED OUT
+# repo_name: Guy1Weibel/guyweibel.github.io # Use the full repo name for # <-- COMMENTED OUT
+
 
 # Theme Configuration
 theme:
   name: material
+  logo: assets/public.svg
   font:
     text: Georgia, serif
     code: Roboto Mono
@@ -19,6 +21,7 @@ theme:
     accent: light blue
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - search.suggest
@@ -29,7 +32,6 @@ theme:
 
 extra_css:
   - css/extra.css
-  - https://unpkg.com/aos@2.3.1/dist/aos.css
   - stylesheets/extra.css
 
 extra_javascript:
@@ -57,11 +59,5 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About Me: about.md
-  - Projects: 
-      - Overview: projects/index.md 
-      - Phage DMS: projects/phage_dms.md
-      - STRAP Plastic Recycling: projects/strap_recycling.md # <-- ADDED STRAP
-      # - Advanced Churn Prediction Model: projects/churn_prediction_model.md # <-- REMOVED CHURN
-      - Project Alpha: projects/project_alpha.md
-      - Project Beta: projects/project_beta.md
+  - Projects: projects/index.md
   - Contact: contact.md
