@@ -12,7 +12,7 @@ body {
 
 /* Styling the main content container */
 .md-main__inner {
-  background-color: #354741;
+  background-color: #475e5e;
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
@@ -215,4 +215,56 @@ body {
 
 .md-typeset .grid.cards > ul > li {
   background-color: #a4ada3;
+}
+
+/* ==========================================================================
+   Header Customizations - Minimalist Tabs
+   ========================================================================== */
+
+/* 1. Hide the Header Logo Button */
+.md-header__button.md-logo {
+  display: none !important;
+}
+
+/* 2. Hide the Search Bar Component */
+.md-search {
+  display: none !important;
+}
+
+.md-header__title .md-header__topic {
+ display: none !important;
+}
+
+.md-header__inner {
+  height: 0.8rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.md-header .md-tabs {
+  display: flex !important;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.md-tabs__list {
+  display: flex !important;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1em;
+}
+
+.md-tabs__item .md-tabs__link {
+  font-size: 1.7em !important;
+  padding: 0.5em 2.5em !important;
+  height: 100%;
+  display: flex !important;
+  align-items: center !important;
+  line-height: normal !important;
+  white-space: nowrap;
 }
