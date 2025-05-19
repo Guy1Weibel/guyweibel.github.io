@@ -1,3 +1,6 @@
+# About Me
+{.about-me-heading}
+
 I have a B.S. in Chemistry, and Data Science.
 During university, I spent three years researching in the Chemical Engineering and Biochemistry departments. My experiences taught me how to work backward from a question, design experiments to test my ideas, and draw conclusiong with effective visualization and communication. I plan to use these skills to learn more about things on my own using Python and R.
 

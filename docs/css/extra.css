@@ -10,9 +10,9 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* Styling the main content container */
+/* Styling the main content container - DEFAULT FOR ALL PAGES */
 .md-main__inner {
-  background-color: #475e5e;
+  background-color: #475e5e; /* Your chosen default green-ish color */
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +25,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* --- STYLES FOR THE CONTACT PAGE --- */
+/* --- STYLES FOR THE CONTACT PAGE (Background Image & Specific Text Styling) --- */
 
 @font-face {
   font-family: 'RetroPixel';
@@ -38,7 +38,7 @@ body {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
     url('../images/contact/orangemail.png');
-  background-color: transparent !important;
+  background-color: transparent !important; /* Overrides the default green for contact page */
   background-size: 100% 100%, 100% 100%;
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center center;
@@ -84,115 +84,76 @@ body {
   text-decoration: underline !important;
 }
 
-/* --- HEADER CUSTOMIZATIONS --- */
+/* --- HEADER CUSTOMIZATIONS (User Tuned - Minimalist Tabs) --- */
 
 /* Hide the textual site name in the header */
 .md-header__title .md-header__topic {
   display: none !important;
 }
 
-/* Define a target height for header items for alignment */
-:root {
-  --header-item-target-height: 2.6rem; /* Adjust this value as the master height */
+/* Hiding Logo and Search from Header */
+.md-header__button.md-logo,
+.md-search {
+  display: none !important;
 }
 
-/* Logo Styling */
-.md-header__button.md-logo {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  padding: 0; /* Remove padding, height will control size */
-  height: var(--header-item-target-height); /* Use target height */
-  min-width: var(--header-item-target-height); /* Ensure it has some width for clickability */
-  order: -2;
-  margin-left: 0.4rem;
-  margin-right: 1rem; /* Space between logo and tabs */
-}
-
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg {
-  height: 1.8rem; /* Visual size of SVG, adjust if needed */
-  width: auto;
-  display: block;
+/* Header Bar Inner Container - User specified height */
+.md-header__inner {
+  height: 0.8rem !important; /* User preferred height */
+  display: flex !important;
+  align-items: center !important;
 }
 
 /* Tabs Container */
 .md-header .md-tabs {
-  order: -1;
-  display: flex; /* It's already a flex container for its items */
-  align-items: center; /* Align tab items vertically */
-  height: var(--header-item-target-height); /* Make tabs container same height */
-}
-
-/* Individual Tab Links - CRITICAL FOR ALIGNMENT */
-.md-tabs__item .md-tabs__link {
-  height: var(--header-item-target-height); /* Make each link fill the target height */
-  display: flex !important;       /* Use flex to center text within this height */
-  align-items: center !important; /* Vertically center the text node */
-  padding: 0 0.6rem !important;   /* Adjust horizontal padding, remove vertical */
-  margin: 0;                   /* Remove any default margins on the link itself */
-  line-height: normal !important; /* Reset line-height that might interfere */
-}
-
-/* Search Component */
-.md-search {
-  order: 1;
-  margin-left: auto;
-  margin-right: 0.4rem;
-  display: flex;
-  align-items: center; /* Center items within the search component */
-  height: var(--header-item-target-height); /* Make search component same height */
-}
-
-/* Styling the search input and button for vertical alignment */
-.md-search__input {
-  height: calc(var(--header-item-target-height) - 0.4rem); /* Make input slightly smaller than container */
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0.1rem; /* Fine tune text position in input */
-  padding-bottom: 0.1rem;
-}
-.md-search__icon { /* If there's a search icon button */
-  height: var(--header-item-target-height);
-  display: flex;
+  display: flex !important;
+  flex-grow: 1; 
+  justify-content: center; 
   align-items: center;
+  height: 100%; 
+  margin: 0;
+  padding: 0;
 }
 
-
-/* Overall alignment for direct children of the header bar */
-.md-header__inner {
-  align-items: center !important; /* Center children vertically */
-  /* height: var(--header-item-target-height); */ /* Optionally set explicit height for the whole bar */
+/* The <ul> list holding the tab items */
+.md-tabs__list {
+  display: flex !important;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1em; /* Space BETWEEN tabs - User to adjust */
 }
 
+/* Individual Tab Links - User specified font/padding */
+.md-tabs__item .md-tabs__link {
+  font-size: 1.6em !important;   /* User preferred font size */
+  padding: 0em 2.5em !important; /* User preferred padding */
+  height: 0.2rem !important; 
+  display: flex !important;
+  align-items: center !important; 
+  text-align: center;
+  display: block;
+  line-height: 1 !important;
+  white-space: nowrap;
+  box-sizing: border-box; 
+}
 
-/* Optional: Hide custom logo in sticky header if page title is preferred */
-/* .md-header--lifted .md-header__button.md-logo { display: none; } */
+/* --- Global Styles (Apply Everywhere) & Hiding Elements --- */
 
-/* Optional: If logo serves as home link, hide "Home" tab */
-/* nav.md-tabs__list > .md-tabs__item:first-child { display: none !important; } */
-
-/* --- Global Styles (Apply Everywhere) --- */
-/* ... (rest of your CSS remains the same) ... */
-
-/* Hide the permalink symbol (¶) on hover for all headers */
 .headerlink {
   visibility: hidden !important;
 }
 
-/* General padding for content article */
-.md-content__inner {
+.md-content__inner { /* Default padding for content area */
    padding: 1rem;
 }
 
-/* --- Hide specific theme elements --- */
 .md-nav__item--active,
 .md-nav--secondary,
 .md-copyright {
     display: none !important;
 }
 
-/* Utility class for centering text */
 .text-center {
   text-align: center !important;
 }
@@ -217,54 +178,155 @@ body {
   background-color: #a4ada3;
 }
 
+
 /* ==========================================================================
-   Header Customizations - Minimalist Tabs
+   PAGE-SPECIFIC CONTENT AREA BACKGROUND COLORS & TEXT CONTRAST (using H1 IDs)
    ========================================================================== */
 
-/* 1. Hide the Header Logo Button */
-.md-header__button.md-logo {
-  display: none !important;
+/* --- Home Page --- */
+.md-main__inner:has(h1#welcome) {
+  background-color: #F0F8FF !important; /* AliceBlue (Light Blue) */
+}
+/* Text contrast for Home Page (because AliceBlue is light) */
+.md-main__inner:has(h1#welcome) .md-content__inner {
+  color: #222222 !important; /* Main text color - dark grey */
+}
+.md-main__inner:has(h1#welcome) .md-content__inner h1,
+.md-main__inner:has(h1#welcome) .md-content__inner h2,
+.md-main__inner:has(h1#welcome) .md-content__inner h3,
+.md-main__inner:has(h1#welcome) .md-content__inner h4 {
+  color: #111111 !important; /* Headings - slightly darker or different */
+}
+.md-main__inner:has(h1#welcome) .md-content__inner a {
+  color: #005A9C !important; /* Links - distinct dark blue */
+}
+.md-main__inner:has(h1#welcome) .md-content__inner a:hover {
+  color: #003366 !important; /* Links on hover - even darker blue */
 }
 
-/* 2. Hide the Search Bar Component */
-.md-search {
-  display: none !important;
+
+/* --- About Me Page --- */
+.md-main__inner:has(h1#about-me) {
+  background-color: #FAEBD7 !important; /* AntiqueWhite (Light Beige) */
+}
+/* Text contrast for About Me Page (because AntiqueWhite is light) */
+.md-main__inner:has(h1#about-me) .md-content__inner {
+  color: #3B3121 !important; /* Dark brown text */
+}
+.md-main__inner:has(h1#about-me) .md-content__inner h1,
+.md-main__inner:has(h1#about-me) .md-content__inner h2,
+.md-main__inner:has(h1#about-me) .md-content__inner h3,
+.md-main__inner:has(h1#about-me) .md-content__inner h4 {
+  color: #2A2216 !important; /* Darker brown for headings */
+}
+.md-main__inner:has(h1#about-me) .md-content__inner a {
+  color: #8B4513 !important; /* SaddleBrown for links */
+}
+.md-main__inner:has(h1#about-me) .md-content__inner a:hover {
+  color: #5A2D0C !important; /* Darker SaddleBrown for hover */
 }
 
-.md-header__title .md-header__topic {
- display: none !important;
+
+/* --- Projects Overview Page --- */
+.md-main__inner:has(h1#my-data-science-projects) {
+  background-color: #E6E6FA !important; /* Lavender (Light Purple) */
+}
+/* Text contrast for Projects Overview Page (because Lavender is light) */
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner {
+  color: #2C2C3E !important; /* Dark purple text */
+}
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner h1,
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner h2,
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner h3,
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner h4 {
+  color: #1A1A28 !important; /* Darker purple for headings */
+}
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner a {
+  color: #483D8B !important; /* DarkSlateBlue for links */
+}
+.md-main__inner:has(h1#my-data-science-projects) .md-content__inner a:hover {
+  color: #2E265C !important; /* Darker DarkSlateBlue for hover */
+}
+/* Note for project cards on Projects Overview:
+   The project cards have their own background (.md-typeset .grid.cards > ul > li { background-color: #a4ada3; }).
+   If #a4ada3 is light, text inside cards will need to be dark.
+   If #a4ada3 is dark, text inside cards should be light (default dark mode text usually works).
+   Example if #a4ada3 card background is light and you want dark text in cards on THIS PAGE ONLY:
+   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li,
+   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li p,
+   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li strong {
+     color: #2C2C3E !important; /* Dark purple text from page, or a generic dark like #333 */
+   }
+   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li a {
+     color: #483D8B !important; /* Link color from page, or a generic dark link color */
+   }
+*/
+
+
+/* --- Phage DMS Project Page --- */
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) {
+  background-color: #D8BFD8 !important; /* Thistle (Light Purple/Pink) */
+}
+/* Text contrast for Phage DMS Page (because Thistle is light) */
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner {
+  color: #4B3A4B !important; /* Dark magenta/purple text */
+}
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h1,
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h2,
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h3,
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h4 {
+  color: #3A2C3A !important; /* Darker magenta/purple for headings */
+}
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner a {
+  color: #8A2BE2 !important; /* BlueViolet for links */
+}
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner a:hover {
+  color: #5D1D9C !important; /* Darker BlueViolet for hover */
 }
 
-.md-header__inner {
-  height: 0.8rem !important;
-  display: flex !important;
-  align-items: center !important;
+
+/* --- STRAP Project Page --- */
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) {
+  background-color: #B0E0E6 !important; /* PowderBlue (Light Blue/Cyan) */
+}
+/* Text contrast for STRAP Page (because PowderBlue is light) */
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner {
+  color: #1E3C40 !important; /* Dark cyan/blue text */
+}
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h1,
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h2,
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h3,
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h4 {
+  color: #14292C !important; /* Darker cyan/blue for headings */
+}
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner a {
+  color: #20B2AA !important; /* LightSeaGreen for links */
+}
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner a:hover {
+  color: #167D77 !important; /* Darker LightSeaGreen for hover */
 }
 
-.md-header .md-tabs {
-  display: flex !important;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-.md-tabs__list {
-  display: flex !important;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  gap: 1em;
+/* --- Contact Page (For future color change if Pokemon mail is removed) --- */
+/* This page currently uses a background image via .md-main__inner:has(h1#contact) earlier in this file. */
+/* If you remove that rule and want a solid color instead: */
+/*
+.md-main__inner:has(h1#contact) {
+  background-color: #YourContactSolidColor !important;
 }
-
-.md-tabs__item .md-tabs__link {
-  font-size: 1.7em !important;
-  padding: 0.5em 2.5em !important;
-  height: 100%;
-  display: flex !important;
-  align-items: center !important;
-  line-height: normal !important;
-  white-space: nowrap;
+.md-main__inner:has(h1#contact) .md-content__inner {
+  color: #YourContactTextColor !important; /* Set to dark if YourContactSolidColor is light */
 }
+.md-main__inner:has(h1#contact) .md-content__inner h1,
+.md-main__inner:has(h1#contact) .md-content__inner h2,
+.md-main__inner:has(h1#contact) .md-content__inner h3,
+.md-main__inner:has(h1#contact) .md-content__inner h4 {
+  color: #YourContactHeadingColor !important;
+}
+.md-main__inner:has(h1#contact) .md-content__inner a {
+  color: #YourContactLinkColor !important;
+}
+.md-main__inner:has(h1#contact) .md-content__inner a:hover {
+  color: #YourContactLinkHoverColor !important;
+}
+*/
