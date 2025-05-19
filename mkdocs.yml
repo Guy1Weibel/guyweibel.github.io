@@ -5,7 +5,7 @@ site_author: Guy Weibel
 site_description: A portfolio showcasing my data science projects.
 
 repo_url: https://github.com/Guy1Weibel/guyweibel.github.io
-repo_name: Guy1Weibel/guyweibel.github.io # Use the full repo name for 
+repo_name: Guy1Weibel/guyweibel.github.io
 
 # Theme Configuration
 theme:
@@ -14,18 +14,9 @@ theme:
     text: Georgia, serif
     code: Roboto Mono
   palette:
-    - scheme: slate
-      primary: blue grey
-      accent: light blue
-      toggle:
-        icon: material/brightness-7 # Icon to switch TO light mode
-        name: Switch to light mode
-    - scheme: default
-      primary: indigo
-      accent: pink
-      toggle:
-        icon: material/brightness-4 # Icon to switch TO dark mode
-        name: Switch to dark mode
+    scheme: slate
+    primary: blue grey
+    accent: light blue
   features:
     - navigation.tabs
     - navigation.sections
@@ -33,6 +24,8 @@ theme:
     - search.suggest
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - content.cards
 
 extra_css:
   - css/extra.css
@@ -55,15 +48,20 @@ markdown_extensions:
   - toc:
       permalink: true
   - attr_list
+  - md_in_html
+  - pymdownx.emoji: # Ensure emoji extension is explicitly enabled
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # Navigation Structure
 nav:
   - Home: index.md
   - About Me: about.md
-  - Projects:
-      - Overview: projects/index.md
+  - Projects: 
+      - Overview: projects/index.md 
+      - Phage DMS: projects/phage_dms.md
+      - STRAP Plastic Recycling: projects/strap_recycling.md # <-- ADDED STRAP
+      # - Advanced Churn Prediction Model: projects/churn_prediction_model.md # <-- REMOVED CHURN
       - Project Alpha: projects/project_alpha.md
       - Project Beta: projects/project_beta.md
-      # Add more projects here as projects/your_project_name.md
-  - Resume: resume.md
   - Contact: contact.md

@@ -4,7 +4,9 @@ body {
   background-color: #e0e0e0; /* Fallback */
   background-image: url('../images/tile_pattern.jpg');
   background-attachment: fixed; /* Keeps pattern fixed on scroll */
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position; center center;
   overscroll-behavior-y: none; /* Add this line */
 }
 
@@ -69,4 +71,9 @@ body {
 .last-intro-line {
   /* We want a bit more space after this line, before the image */
   margin-bottom: 1em; /* Adjust this value for the space before your image. */
+}
+
+.md-typeset .grid.cards > ul > li {
+  background-color: #a4ada3; /* Your desired card background color */
+  /* The existing border and hover shadow effect from the theme should still apply */
 }
