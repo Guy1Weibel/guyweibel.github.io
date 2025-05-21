@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("Initializing AOS..."); // Add this line for debugging
+  // --- Your existing AOS Initialization ---
+  console.log("Initializing AOS..."); // For debugging
   AOS.init({
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
@@ -19,9 +20,56 @@ document.addEventListener('DOMContentLoaded', function() {
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   });
-  console.log("AOS Initialized."); // Add this line for debugging
-});
+  console.log("AOS Initialized."); // For debugging
+
+  // --- Page-Specific Body Classes ---
+  console.log("Checking for page-specific body class conditions..."); 
+
+  if (document.getElementById('about-me')) {
+    document.body.classList.add('body-is-about-me-page');
+    console.log("Added class 'body-is-about-me-page' to body."); 
+  }
+  /*
+  if (document.getElementById('welcome')) {
+    document.body.classList.add('body-is-home-page');
+    console.log("Added class 'body-is-home-page' to body.");
+  }
+  */
+  console.log("Page-specific body class check complete.");
+
+  // --- ADD LEANING SURFBOARD ELEMENT TO THE PAGE ---
+  console.log("Attempting to add surfboard element...");
+  const surfboardElement = document.createElement('div');
+  surfboardElement.id = 'leaning-surfboard'; 
+  surfboardElement.setAttribute('data-aos', 'fade-left'); 
+  surfboardElement.setAttribute('data-aos-delay', '1000'); // Increased delay a bit
+  surfboardElement.setAttribute('data-aos-duration', '800'); // Slightly longer fade
+  surfboardElement.setAttribute('data-aos-anchor-placement', 'top-bottom');
+  // surfboardElement.title = "Catch a wave!"; // Optional tooltip
+
+  document.body.appendChild(surfboardElement);
+  console.log("Surfboard element should be added.");
+
+  // --- SURFBOARD CLICK INTERACTION (SHINE EFFECT) ---
+  const clickableSurfboard = document.getElementById('leaning-surfboard');
+  if (clickableSurfboard) {
+    clickableSurfboard.addEventListener('click', function() {
+      console.log("Surfboard clicked! Applying shine.");
+      // Ensure it doesn't rapidly re-add if already shining
+      if (!this.classList.contains('shine-effect')) {
+        this.classList.add('shine-effect');
+        // Remove the shine effect after the animation duration so it can be re-triggered
+        setTimeout(() => {
+          this.classList.remove('shine-effect');
+          console.log("Shine effect removed.");
+        }, 700); // This duration should match your CSS animation-duration for .shine-effect
+      }
+    });
+  } else {
+    console.error("Could not find #leaning-surfboard element for click listener.");
+  }
+
+}); // End of DOMContentLoaded listener
 
 // Optional: You might need to refresh AOS if content loads dynamically later
-// For example, if you were using infinite scroll or something similar
 // window.addEventListener('load', AOS.refresh);

@@ -10,10 +10,24 @@ body {
   overscroll-behavior-y: none;
 }
 
+body.body-is-about-me-page {
+  background-image: url('../images/about/wiscoseattle.png') !important;
+  background-attachment: fixed !important;
+  background-size: 100% auto !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  /* Optional: a fallback color if wiscoseattle.png doesn't load for this page */
+  /* background-color: #some_fallback_color; */
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
 /* Styling the main content container - DEFAULT FOR ALL PAGES */
 .md-main__inner {
-  background-color: #475e5e; /* Your chosen default green-ish color */
-  max-width: 1250px;
+  background-color: #393e41;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem 1.5rem;
@@ -140,6 +154,10 @@ body {
 
 /* --- Global Styles (Apply Everywhere) & Hiding Elements --- */
 
+.md-top {
+  display: none !important; /* Force it to be hidden */
+}
+
 .headerlink {
   visibility: hidden !important;
 }
@@ -160,14 +178,24 @@ body {
 
 .welcome-main-title {
   font-size: 2.8em;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.05em;
   line-height: 1.2;
+  font-weight: bold !important;
+  color: #e5e6d1 !important;
 }
 
 .welcome-subtitle {
+  font-size: 1.2em !important;
   margin-top: 0.1em;
   margin-bottom: 0.1em;
-  line-height: 1.2;
+  line-height: 0.05 !important;
+  font-weight: bold !important;
+  color: #e5e6d1 !important;
+}
+
+body.page-index p {
+  font-weight: bold;
+  color: #e5e6d1;
 }
 
 .last-intro-line {
@@ -185,11 +213,11 @@ body {
 
 /* --- Home Page --- */
 .md-main__inner:has(h1#welcome) {
-  background-color: #F0F8FF !important; /* AliceBlue (Light Blue) */
+  background-color: #D3D0CB !important; /* Timberwolf  */
 }
-/* Text contrast for Home Page (because AliceBlue is light) */
+/* Text contrast for Home Page () */
 .md-main__inner:has(h1#welcome) .md-content__inner {
-  color: #222222 !important; /* Main text color - dark grey */
+  color: #393e41 !important; /* Main text color - onyx  grey */
 }
 .md-main__inner:has(h1#welcome) .md-content__inner h1,
 .md-main__inner:has(h1#welcome) .md-content__inner h2,
@@ -204,14 +232,43 @@ body {
   color: #003366 !important; /* Links on hover - even darker blue */
 }
 
-
-/* --- About Me Page --- */
-.md-main__inner:has(h1#about-me) {
-  background-color: #FAEBD7 !important; /* AntiqueWhite (Light Beige) */
+.centered-image {
+  display: block !important; /* Crucial for margin:auto to work */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 750px; /* Your desired max-width */
+  /* width: 100%; /* Optionally make it responsive up to max-width, but margin:auto needs a defined or max-width */
+  border-radius: 8px;
+  margin-top: 1em; /* Optional: space above */
+  margin-bottom: 1em; /* Optional: space below */
 }
+
+/* For centering paragraph blocks (while text inside remains left-aligned) */
+.text-center-block {
+  display: block !important; /* Crucial for margin:auto to work */
+  max-width: 750px; /* Or a percentage like 80%, or whatever looks good */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left; /* Ensures text lines within the block are left-aligned */
+  margin-top: 1em;  /* Optional: space above */
+  margin-bottom: 1em; /* Optional: space below */
+}
+
+/* --- About Me Page ABOUT ME ABOUT ME!!! --- */
+.md-main__inner:has(h1#about-me) {
+  background-color: #E7E5DF !important; /* AntiqueWhite (Light Beige) */
+}
+
+/* for just the header being bold*/
+/* Specifically style the H1 title on the About Me page */
+.md-main__inner:has(h1#about-me) .md-content__inner h1#about-me {
+  color: #463925 !important; /* Or your preferred distinct title color */
+  font-weight: bold !important;
+}
+
 /* Text contrast for About Me Page (because AntiqueWhite is light) */
 .md-main__inner:has(h1#about-me) .md-content__inner {
-  color: #3B3121 !important; /* Dark brown text */
+  color: #302d29 !important; /* Dark brown text */
 }
 .md-main__inner:has(h1#about-me) .md-content__inner h1,
 .md-main__inner:has(h1#about-me) .md-content__inner h2,
@@ -226,37 +283,94 @@ body {
   color: #5A2D0C !important; /* Darker SaddleBrown for hover */
 }
 
+/* 
+   LEANING SURFBOARD DECORATION & INTERACTION FOR ABOUT ME PAGE
+  */
 
-/* --- Projects Overview Page --- */
+   #leaning-surfboard {
+    position: absolute; /* Fixed to the viewport */
+    bottom: 0;       /* Align to the bottom of the viewport */
+    right: -96px;     /* Adjust for distance from the right edge (e.g., 10px, 20px, 2vw) */
+    /* Or use left: 10px; if you want it on the left side */
+  
+    width: 280px;     /* SET THE WIDTH OF YOUR SURFBOARD IMAGE */
+    height: 280px;   /* SET THE HEIGHT OF YOUR SURFBOARD IMAGE */
+    /* Adjust width/height to match your image's aspect ratio and desired size */
+  
+    background-image: url('../images/ui/surf_tilt.png'); /* Path to your image */
+    background-size: contain; /* Or 'cover' or specific dimensions */
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Ensures bottom of surfboard aligns with bottom */
+  
+    z-index: 999;  /* Keep it above most content, but below modals/popups if any */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 1.8s ease-out; 
+    overflow: hidden; /* To contain the shine pseudo-element */
+
+    mask-image: url('../images/ui/surf_tilt.png');
+    mask-size: contain; /* Should match background-size of the image for accurate masking */
+    mask-repeat: no-repeat;
+    mask-position: bottom center; 
+    -webkit-mask-image: url('../images/ui/surf_tilt.png');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: bottom center;
+  }
+  
+  /* Optional: Slight hover effect for the surfboard */
+  #leaning-surfboard:hover {
+    transform: scale(1.03) rotate(+1deg); /* Slight lift and tilt */
+  }
+  
+  /* Shine effect using a pseudo-element */
+  #leaning-surfboard.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen to the left */
+    width: 50%;  /* Width of the shine */
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%, /* Shine color and opacity */
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg); /* Angle the shine */
+    animation: shine 1.7s forwards; /* Animation name, duration, and fill mode */
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%; /* Start off-screen left */
+    }
+    100% {
+      left: 150%; /* Move across and off-screen right */
+    }
+  }
+
+
+/* --- Projects Overview Page PROJECTS plus back to top button--- */
 .md-main__inner:has(h1#my-data-science-projects) {
-  background-color: #E6E6FA !important; /* Lavender (Light Purple) */
+  background-color: #A07178 !important; /* mountain pink */
 }
 /* Text contrast for Projects Overview Page (because Lavender is light) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner {
-  color: #2C2C3E !important; /* Dark purple text */
+  color: #D9D2D2 !important; /* Dark purple text */
 }
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h1,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h2,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h3,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h4 {
-  color: #1A1A28 !important; /* Darker purple for headings */
+  color: #D9D2D2 !important; /* */
 }
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a {
-  color: #483D8B !important; /* DarkSlateBlue for links */
+  color: #7476AB !important; /* */
 }
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a:hover {
   color: #2E265C !important; /* Darker DarkSlateBlue for hover */
 }
-/* Note for project cards on Projects Overview:
-   The project cards have their own background (.md-typeset .grid.cards > ul > li { background-color: #a4ada3; }).
-   If #a4ada3 is light, text inside cards will need to be dark.
-   If #a4ada3 is dark, text inside cards should be light (default dark mode text usually works).
-   Example if #a4ada3 card background is light and you want dark text in cards on THIS PAGE ONLY:
-   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li,
-   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li p,
-   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li strong {
-     color: #2C2C3E !important; /* Dark purple text from page, or a generic dark like #333 */
-   }
+
    .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li a {
      color: #483D8B !important; /* Link color from page, or a generic dark link color */
    }
@@ -306,27 +420,30 @@ body {
   color: #167D77 !important; /* Darker LightSeaGreen for hover */
 }
 
+/* ==========================================================================
+   PROJECT PAGE-SPECIFIC UI ELEMENT VISIBILITY (e.g., Back to Top Button)
+   ========================================================================== */
 
-/* --- Contact Page (For future color change if Pokemon mail is removed) --- */
-/* This page currently uses a background image via .md-main__inner:has(h1#contact) earlier in this file. */
-/* If you remove that rule and want a solid color instead: */
+/* Show "Back to Top" button on Projects Overview Page */
+.md-main__inner:has(h1#my-data-science-projects) ~ .md-top { /* << Note the ~ .md-top */
+  display: inline-flex !important; /* Or 'block', depending on its original display type before JS hides it.
+                                       Material theme often uses inline-flex for these icon buttons. */
+}
+
+/* Show "Back to Top" button on Phage DMS Project Page */
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) ~ .md-top {
+  display: inline-flex !important;
+}
+
+/* Show "Back to Top" button on STRAP Project Page */
+.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) ~ .md-top {
+  display: inline-flex !important;
+}
+
+/* Add more rules here for any other specific sub-project pages
+   where you want the button to appear. For example: */
 /*
-.md-main__inner:has(h1#contact) {
-  background-color: #YourContactSolidColor !important;
-}
-.md-main__inner:has(h1#contact) .md-content__inner {
-  color: #YourContactTextColor !important; /* Set to dark if YourContactSolidColor is light */
-}
-.md-main__inner:has(h1#contact) .md-content__inner h1,
-.md-main__inner:has(h1#contact) .md-content__inner h2,
-.md-main__inner:has(h1#contact) .md-content__inner h3,
-.md-main__inner:has(h1#contact) .md-content__inner h4 {
-  color: #YourContactHeadingColor !important;
-}
-.md-main__inner:has(h1#contact) .md-content__inner a {
-  color: #YourContactLinkColor !important;
-}
-.md-main__inner:has(h1#contact) .md-content__inner a:hover {
-  color: #YourContactLinkHoverColor !important;
+.md-main__inner:has(h1#another-project-page-id) ~ .md-top {
+  display: inline-flex !important;
 }
 */
