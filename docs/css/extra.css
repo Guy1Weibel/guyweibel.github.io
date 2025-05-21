@@ -352,30 +352,133 @@ body.page-index p {
 
 /* --- Projects Overview Page PROJECTS plus back to top button--- */
 .md-main__inner:has(h1#my-data-science-projects) {
-  background-color: #A07178 !important; /* mountain pink */
+  background-color: #646e68 !important; /* Your dark grey-green background */
 }
-/* Text contrast for Projects Overview Page (because Lavender is light) */
+
+/* Text styling for Projects Overview Page (text is now light against dark background) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner {
-  color: #D9D2D2 !important; /* Dark purple text */
+  color: #D7D9D7 !important; /* Light grey main text */
 }
+
+/* Styling for H1, H2, H3, H4 on Projects Overview Page */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h1,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h2,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h3,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h4 {
-  color: #D9D2D2 !important; /* */
+  color: #E0E0E0 !important;     /* Slightly brighter light grey/off-white for headings */
+  font-weight: bold !important;   /* Make all these headings bold */
+  /* text-align: center; /* Only if you want ALL headings centered, usually just H1 via .text-center class */
 }
+
+/* Links on Projects Overview Page (general links on the page, not in cards) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a {
-  color: #7476AB !important; /* */
+  color: #A7D7F9 !important;       /* A lighter, noticeable blue for links on dark background */
+  text-decoration: none !important; /* ADDED: Underline links */
 }
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a:hover {
-  color: #2E265C !important; /* Darker DarkSlateBlue for hover */
+  color: #FFFFFF !important;       /* Brighter/white on hover */
+  text-decoration: none !important; /* Keep underline on hover */
 }
 
-   .md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li a {
-     color: #483D8B !important; /* Link color from page, or a generic dark link color */
-   }
-*/
+/* Styling for content INSIDE project cards on the Projects Overview page */
 
+/* General text (paragraphs, strong text) inside cards on this page */
+.md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li,
+.md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li p,
+.md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li strong {
+    color: #202923 !important; /* Dark text for the #a4ada3 card background */
+}
+
+/* Links (like "View Project Details") inside cards on this page */
+.md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li a {
+  color: #2E3D34 !important;       /* Darker green/charcoal for links on #a4ada3 card background */
+  font-weight: bold !important;     /* Optionally make card links bold too */
+  text-decoration: none !important; /* Underline card links */
+}
+.md-main__inner:has(h1#my-data-science-projects) .grid.cards ul li a:hover {
+  color: #1C2821 !important;       /* Even darker for hover */
+  text-decoration: none !important; /* Keep underline on hover */
+}
+
+/* ==========================================================================
+   PROJECT CARDS STYLING (on Projects Overview Page)
+   ========================================================================== */
+
+/* Existing style for card background (adjust if needed) */
+.md-typeset .grid.cards > ul > li {
+  background-color: #a4ada3; /* Your card background color */
+  padding: 0; /* Remove default li padding if link takes over */
+  position: relative; /* For positioning the link overlay if needed */
+  list-style-type: none;
+  cursor: pointer; /* Pointer cursor for clickable cards */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, z-index 0s step-end 0.05s;
+  z-index: 1;
+  position: relative;
+  will-change: transform, box-shadow;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, z-index 0s linear 0.2s;
+}
+
+/* Style the main link to behave like the card */
+.project-card-link {
+  display: block; /* Make the link a block element */
+  padding: 0.5rem 0.5rem; /* Add padding INSIDE the link, this becomes the card's padding */
+  text-decoration: none !important; /* Remove underline from the entire card link */
+  height: 100%; /* Make link fill the list item */
+  color: inherit; /* Inherit text color from parent, or set explicitly */
+}
+
+/* Content wrapper inside the link */
+.project-card-content {
+  display: block;
+  text-decoration: none !important ; 
+}
+
+/* style for project card title */
+.project-card-title {
+  font-weight: bold !important;
+  font-size: 1.2em !important;
+  margin-top: 0;
+  margin-bottom: 0em;
+  color: #2E3D34 !important; /* Base dark color for title on #a4ada3 background */
+  text-decoration: none !important;
+  text-align: center !important;
+  display: block; /* NO underline for title */
+}
+
+/* Styling for text and links INSIDE the card on Projects Overview page */
+/* These are your existing rules, ensure they target content within .project-card-link or .project-card-content */
+.md-main__inner:has(h1#my-data-science-projects) .project-card-link,
+.md-main__inner:has(h1#my-data-science-projects) .project-card-link p,
+.md-main__inner:has(h1#my-data-science-projects) .project-card-link strong {
+    content: strong;
+    color: #202923 !important;
+    text-decoration: none !important; /* Dark text for the #a4ada3 card background */
+}
+
+/* --- HOVER ANIMATION FOR THE CARD (List Item) --- */
+.md-typeset .grid.cards > ul > li:hover {
+  transform: scale(1.05); /* Slightly scales the card up, giving a widening effect */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* Enhance shadow on hover */
+  z-index: 20; /* Bring to front on hover */
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+/* NEW: Change text colors on card hover */
+.md-typeset .grid.cards > ul > li:hover .project-card-title {
+  color: #1C2821 !important; /* Darker title color on hover */
+}
+
+
+.md-typeset .grid.cards > ul > li:hover .project-card-link .project-card-content,
+.md-typeset .grid.cards > ul > li:hover .project-card-link .project-card-content p {
+  color: #202923 !important; /* Darker description text on hover */
+}
 
 /* --- Phage DMS Project Page --- */
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) {
@@ -390,9 +493,11 @@ body.page-index p {
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h3,
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner h4 {
   color: #3A2C3A !important; /* Darker magenta/purple for headings */
+  font-weight: bold !important; /* Make headings bold */
 }
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner a {
   color: #8A2BE2 !important; /* BlueViolet for links */
+  text-decoration: none !important; /* no underline */
 }
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner a:hover {
   color: #5D1D9C !important; /* Darker BlueViolet for hover */
