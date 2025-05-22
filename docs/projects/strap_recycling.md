@@ -1,23 +1,30 @@
-# STRAP: Solvent-Targeted Plastic Recycling
-
-## Project Overview
-This project focused on optimizing and scaling the Solvent-Targeted Recovery and Precipitation (STRAP) process, a chemical recycling method 
-designed to recover pure polymers from complex multilayer plastic films. My work primarily involved polyethylene (LDPE, HDPE) extraction from 
-post-industrial printed films, but also addressed the recovery of other polymers like EVOH and PET.
+# STRAP: Solvent-Targeted Plastic Recycling {: .text-center data-aos="fade-down" }
 
 **Period:** Mar 2022 – May 2024
-**Affiliation:** UW-Madison Department of Engineering
+{: .text-center data-aos="fade-down" }
+
+**Affiliation:** UW-Madison Department of Chemical & Biological Engineering
+{: .text-center data-aos="fade-down" }
+
+## Overview: {: .text-center}
+Multilayer plastic films, common in modern packaging, pose a significant recycling challenge. Traditional mechanical recycling methods often struggle with these complex materials, contributing to the fact that less than 9% of plastic globally is actually recycled. The Solvent-Targeted Recovery and Precipitation (STRAP) process offers a promising chemical recycling route by selectively dissolving and recovering individual polymer layers. This project focused on optimizing the STRAP process, with a key emphasis on purifying and reusing solvents to enhance the method's sustainability and economic viability.
+
+## Methods: {: .text-center}
+The STRAP process involves several key steps:   
+-Adding polymer films to a solvent  
+-Heating the mixture to dissolve the polymer  
+-Collecting and cooling the solutuion, allowing the polymer to precipitate  
+-Separating the precipitated polymer from the solvent via filtration  
+-The remaining solvent   
 
 <!-- Optional: Add a relevant image here, e.g., a diagram of the STRAP process, or before/after shots of the plastic -->
 <!-- ![STRAP Process Diagram](../images/strap_recycling/process_flow.png) -->
 
-## Key Achievements & Responsibilities
+## Key Achievements {: .text-center}
 
 *   **Process Optimization & Yield Improvement:**
-    *   Systematically optimized the STRAP process parameters (e.g., solvent choice, temperature, dissolution time, anti-solvent ratios) to 
-recycle multilayer plastic films.
-    *   Achieved up to **94% yield** of targeted polymers, including polyethylene (PE), ethylene vinyl alcohol (EVOH), and polyethylene 
-terephthalate (PET), demonstrating high recovery efficiency.
+    *   Optimized the STRAP parameters (solvent choice, temperature, dissolution time, vessel), achieving up to **94% yield** of targeted polymers, including polyethylene (PE), ethylene vinyl alcohol (EVOH), and polyethylene 
+terephthalate (PET).
 
 *   **Process Scaling & Collaboration:**
     *   Collaborated with engineering staff to scale up the STRAP process.

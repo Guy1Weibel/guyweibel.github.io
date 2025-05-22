@@ -406,7 +406,7 @@ body.page-index p {
 
 /* Existing style for card background (adjust if needed) */
 .md-typeset .grid.cards > ul > li {
-  background-color: #a4ada3; /* Your card background color */
+  background-color: #dfe6e1; /* Your card background color */
   padding: 0; /* Remove default li padding if link takes over */
   position: relative; /* For positioning the link overlay if needed */
   list-style-type: none;
@@ -506,7 +506,7 @@ body.page-index p {
 
 /* --- STRAP Project Page --- */
 .md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) {
-  background-color: #B0E0E6 !important; /* PowderBlue (Light Blue/Cyan) */
+  background-color: #d6c7b6 !important; /* PowderBlue (Light Blue/Cyan) */
 }
 /* Text contrast for STRAP Page (because PowderBlue is light) */
 .md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner {
