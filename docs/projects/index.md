@@ -26,7 +26,7 @@ Below you'll find a selection of my work in data science, biochemistry, and chem
 - <a href="strap_recycling" class="project-card-link">
     <span class="project-card-content">
         <h3 class="project-card-title">STRAP (Solvent Targeted Recovery And Precipitation)</h3>
-        Optimizing the Solvent-Targeted Recovery and Precipitation (STRAP) process for recycling multilayer plastic films.
+        Optimizing the STRAP process for recycling multilayer plastic films
     </span>
   </a>
 

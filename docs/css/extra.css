@@ -352,12 +352,12 @@ body.page-index p {
 
 /* --- Projects Overview Page PROJECTS plus back to top button--- */
 .md-main__inner:has(h1#my-data-science-projects) {
-  background-color: #646e68 !important; /* Your dark grey-green background */
+  background-color: #c4ccc6 !important; /* Your light grey-green background */
 }
 
-/* Text styling for Projects Overview Page (text is now light against dark background) */
+/* Text styling for Projects Overview Page (text is now dark against light background) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner {
-  color: #D7D9D7 !important; /* Light grey main text */
+  color: #2f3330 !important; /* dark main text */
 }
 
 /* Styling for H1, H2, H3, H4 on Projects Overview Page */
@@ -365,18 +365,18 @@ body.page-index p {
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h2,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h3,
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner h4 {
-  color: #E0E0E0 !important;     /* Slightly brighter light grey/off-white for headings */
+  color: #2f3330 !important;     /* Slightly brighter light grey/off-white for headings */
   font-weight: bold !important;   /* Make all these headings bold */
   /* text-align: center; /* Only if you want ALL headings centered, usually just H1 via .text-center class */
 }
 
 /* Links on Projects Overview Page (general links on the page, not in cards) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a {
-  color: #A7D7F9 !important;       /* A lighter, noticeable blue for links on dark background */
+  color: #2f3330 !important;       /* A lighter, noticeable blue for links on dark background */
   text-decoration: none !important; /* ADDED: Underline links */
 }
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner a:hover {
-  color: #FFFFFF !important;       /* Brighter/white on hover */
+  color: #2f3330 !important;       /* Brighter/white on hover */
   text-decoration: none !important; /* Keep underline on hover */
 }
 
@@ -418,9 +418,11 @@ body.page-index p {
   transition-property: transform, box-shadow;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, z-index 0s linear 0.2s;
-}
+  border: 1px solid #393e41;
+  border-radius: 6px; 
+  box-sizing: border-box; 
+} 
 
 /* Style the main link to behave like the card */
 .project-card-link {
@@ -454,9 +456,9 @@ body.page-index p {
 .md-main__inner:has(h1#my-data-science-projects) .project-card-link,
 .md-main__inner:has(h1#my-data-science-projects) .project-card-link p,
 .md-main__inner:has(h1#my-data-science-projects) .project-card-link strong {
-    content: strong;
     color: #202923 !important;
-    text-decoration: none !important; /* Dark text for the #a4ada3 card background */
+    text-decoration: none !important;
+    text-align: center !important;
 }
 
 /* --- HOVER ANIMATION FOR THE CARD (List Item) --- */
@@ -482,7 +484,7 @@ body.page-index p {
 
 /* --- Phage DMS Project Page --- */
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) {
-  background-color: #D8BFD8 !important; /* Thistle (Light Purple/Pink) */
+  background-color: #a5b4c9 !important; /* Thistle (Light Purple/Pink) */
 }
 /* Text contrast for Phage DMS Page (because Thistle is light) */
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner {
@@ -505,23 +507,29 @@ body.page-index p {
 
 
 /* --- STRAP Project Page --- */
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) {
-  background-color: #d6c7b6 !important; /* PowderBlue (Light Blue/Cyan) */
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) {
+  background-color: #f5e9da !important; 
 }
+
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .centered-image {
+  border: 3px solid #4f3715 !important; /* DarkSlateGray border for STRAP page images */
+}
+
 /* Text contrast for STRAP Page (because PowderBlue is light) */
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner {
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner {
   color: #1E3C40 !important; /* Dark cyan/blue text */
 }
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h1,
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h2,
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h3,
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner h4 {
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner h1,
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner h2,
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner h3,
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner h4 {
   color: #14292C !important; /* Darker cyan/blue for headings */
+  font-weight: bold !important; /* Make headings bold */
 }
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner a {
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner a {
   color: #20B2AA !important; /* LightSeaGreen for links */
 }
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) .md-content__inner a:hover {
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) .md-content__inner a:hover {
   color: #167D77 !important; /* Darker LightSeaGreen for hover */
 }
 
@@ -541,7 +549,7 @@ body.page-index p {
 }
 
 /* Show "Back to Top" button on STRAP Project Page */
-.md-main__inner:has(h1#strap-solvent-targeted-plastic-recycling) ~ .md-top {
+.md-main__inner:has(h1#strap-solvent-targeted-recovery-and-precipitation) ~ .md-top {
   display: inline-flex !important;
 }
 

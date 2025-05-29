@@ -1,5 +1,7 @@
 # Contact
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/guy-weibel-3888aa203/) and send me a message!
+[LinkedIn](https://www.linkedin.com/in/guy-weibel-3888aa203/)
+{: .text-center data-aos="fade-down" }
 
-Or email me at guy.e.weibel@gmail.com
+Email: guy.e.weibel@gmail.com 
+{: .text-center data-aos="fade-down" }
