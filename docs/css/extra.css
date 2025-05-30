@@ -155,7 +155,12 @@ html {
 /* --- Global Styles (Apply Everywhere) & Hiding Elements --- */
 
 .md-top {
-  display: none !important; /* Force it to be hidden */
+  display: none !important;
+  align-items: center !important; /* Vertically center SVG and text block */
+  justify-content: center;       /* Horizontally center content if button is wider */
+  gap: 0.3em;                    /* Adds a small space between the icon and the text */
+  padding-top: 0.1em;            /* EXPERIMENT: Tiny nudge up for all content */
+  padding-bottom: 0.1em;/* Force it to be hidden */
 }
 
 .headerlink {
@@ -352,12 +357,27 @@ body.page-index p {
 
 /* --- Projects Overview Page PROJECTS plus back to top button--- */
 .md-main__inner:has(h1#my-data-science-projects) {
-  background-color: #c4ccc6 !important; /* Your light grey-green background */
+  background-color: #c4ccc6 !important; /* Solid base color */
+  background-image: repeating-linear-gradient( 
+    45deg,
+    rgba(0.01,0.05,0.01,0.15), /* Made lines slightly darker for better visibility - ADJUST AS NEEDED */
+    rgba(52, 180, 90, 0.05) 1px,
+    transparent 1px,
+    transparent 10px /* Spacing of lines - ADJUST AS NEEDED */
+  ) !important; /* Added !important just in case */
+  position: relative; /* For the JS spotlight div */
+  overflow: hidden; 
 }
 
 /* Text styling for Projects Overview Page (text is now dark against light background) */
 .md-main__inner:has(h1#my-data-science-projects) .md-content__inner {
   color: #2f3330 !important; /* dark main text */
+}
+
+.md-main__inner:has(h1#my-data-science-projects) > .md-content__inner { 
+  position: relative; /* Make it a positioning context */
+  z-index: 2;         /* Higher than the spotlight overlay */
+  /* background: transparent; /* Ensure it doesn't have its own opaque background */
 }
 
 /* Styling for H1, H2, H3, H4 on Projects Overview Page */
@@ -463,7 +483,7 @@ body.page-index p {
 
 /* --- HOVER ANIMATION FOR THE CARD (List Item) --- */
 .md-typeset .grid.cards > ul > li:hover {
-  transform: scale(1.05); /* Slightly scales the card up, giving a widening effect */
+  transform: scale(1.08); /* Slightly scales the card up, giving a widening effect */
   box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* Enhance shadow on hover */
   z-index: 20; /* Bring to front on hover */
   transition-property: transform, box-shadow;
@@ -484,8 +504,14 @@ body.page-index p {
 
 /* --- Phage DMS Project Page --- */
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) {
-  background-color: #a5b4c9 !important; /* Thistle (Light Purple/Pink) */
+  background-color: #d6e6ff !important; /* Thistle (Light Purple/Pink) */
 }
+
+.md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .centered-image {
+  border: 3px solid #480048 !important; 
+  box-sizing: border-box; 
+}
+
 /* Text contrast for Phage DMS Page (because Thistle is light) */
 .md-main__inner:has(h1#phage-dms-mapping-viral-fitness-landscapes) .md-content__inner {
   color: #4B3A4B !important; /* Dark magenta/purple text */

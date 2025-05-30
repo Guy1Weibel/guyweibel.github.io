@@ -1,10 +1,12 @@
-# Phage DMS: Mapping Viral Fitness Landscapes
+# Phage DMS: Mapping Viral Fitness Landscapes {.text-center}
 
-## Project Goal
+## Project Goal {.text-center}
 The primary goal of this project was to systematically investigate how genetic variations in bacteriophage T7 affect its ability to infect and thrive in different *E. coli* bacterial hosts. By creating and testing vast libraries of phage variants, we aimed to uncover crucial sequence-function relationships that dictate phage fitness.
 
-![T7 Bacteriophage Structure](../../images/phage_dms/t7_phage_structure.png)
-*Caption: Conceptual illustration of a T7 bacteriophage, the viral system studied.*
+![T7 Bacteriophage Structure](../../images/phage_dms/t7_phage_structure.png){: .centered-image style="max-width: 500px;" data-aos="zoom-in"}
+
+*T7 Bacteriophage*  
+{: .text-center }
 
 ## Approach: Deep Mutational Scanning (DMS)
 We utilized Deep Mutational Scanning (DMS), a high-throughput method to assess the functional consequences of thousands of mutations simultaneously. This was applied to three key T7 phage genes:
@@ -31,7 +33,7 @@ A core data science component involved processing and analyzing the large datase
 *   Accurate barcode identification and read counting.
 *   Quality control, such as assessing the impact of ambiguous base calls ('N's) in reads.
 
-![Distribution of 'N' Basepairs in Reads](../../images/phage_dms/n_basepair_distribution.png)
+![Distribution of 'N' Basepairs in Reads](../../images/phage_dms/n_basepair_distribution.png){: .centered-image style="max-width: 600px;" data-aos="zoom-in"}
 *Caption: Analysis of uncertain base calls ('N's) in sequencing reads. While reads with 'N's in critical regions were a concern, their low overall frequency meant that excluding them had minimal impact on the final results, streamlining the analysis.*
 
 ### Quantifying and Visualizing Fitness Landscapes
@@ -42,7 +44,7 @@ The central analytical task was to transform barcode counts into interpretable f
 **Example: Amino Acid Substitutions and Host Specificity**
 Data analysis revealed how specific amino acid changes at particular positions within a protein (e.g., gp11) impacted phage fitness differently depending on the bacterial host.
 
-![Example Amino Acid Substitution Effects](../../images/phage_dms/aa_substitution_example.png)
+![Example Amino Acid Substitution Effects](../../images/phage_dms/aa_substitution_example.png){: .centered-image style="max-width: 200px;" data-aos="zoom-in"}
 *Caption: Representative data showing how substituting the original amino acid at a specific position in gp11 (Y-axis: average log2 functional score) affects phage fitness across different E. coli hosts (X-axis or different colors). For example, a Proline (P) substitution might be generally disruptive. Conversely, changing an Alanine (A) to Cysteine (C) could be highly beneficial in the O121 host but neutral or deleterious in others. Such analyses pinpoint residues critical for host-specific interactions.*
 
 Key insights from this type of analysis included:
@@ -52,13 +54,13 @@ Key insights from this type of analysis included:
 ## Structural Interpretation with PyMOL
 To bridge the gap between sequence-level changes and their physical implications, fitness data was mapped onto the 3D structure of the gp11 protein using PyMOL. This allowed for the visualization of functional "hotspots."
 
-![gp11 Enriched Hotspots](../../images/phage_dms/pymol_gp11_enriched_hotspots.png)
+![gp11 Enriched Hotspots](../../images/phage_dms/pymol_gp11_enriched_hotspots.png){: .centered-image style="max-width: 600px;" data-aos="zoom-in"}
 *Caption: PyMOL visualization of gp11. Residues where mutations frequently led to *increased* phage fitness are highlighted (e.g., in red), indicating regions potentially involved in beneficial adaptations.*
 
-![gp11 Intolerant Hotspots](../../images/phage_dms/pymol_gp11_intolerant_hotspots.png)
+![gp11 Intolerant Hotspots](../../images/phage_dms/pymol_gp11_intolerant_hotspots.png){: .centered-image style="max-width: 600px;" data-aos="zoom-in"}
 *Caption: PyMOL visualization highlighting regions in gp11 (e.g., in blue) that are highly "intolerant" to mutations. Most changes at these sites were detrimental, suggesting they are critical for the protein's structural integrity or core function.*
 
-![gp11 Host-Variant Hotspots](../../images/phage_dms/pymol_gp11_variant_hotspots.png)
+![gp11 Host-Variant Hotspots](../../images/phage_dms/pymol_gp11_variant_hotspots.png){: .centered-image style="max-width: 600px;" data-aos="zoom-in"}
 *Caption: PyMOL visualization showing "variant" hotspots – positions where the functional outcome of mutations was highly dependent on the specific E. coli host. This points to regions directly involved in host-specific interactions.*
 
 These structural analyses helped to:

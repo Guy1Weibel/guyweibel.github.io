@@ -78,7 +78,7 @@ Systematic trials with this vessel involved meticulous logging of parameters lik
 *   Produced **1 kg of recycled polyethylene** for successful pilot film manufacturing.
 *   Employed GC-MS for analytical characterization of solvents and contaminants.
 
-## Challenges & Learnings {: .text-center}
+## Challenges {: .text-center}
 The STRAP journey involved tackling challenges from fundamental process optimization and effective polymer separation (especially with contaminated films) to innovative equipment design and detailed process analysis. Key learnings included the critical importance of solvent purity, the insights gained from real-time process monitoring like viscosity, and the complexities of scaling chemical processes. The meticulous data collection from various experimental phases, including the piston vessel trials, underscored the power of quantitative analysis in refining and advancing such technologies.
 
 While deeply rooted in chemical engineering, this multi-faceted project significantly honed my skills in experimental design, data collection, quantitative analysis, and problem-solving—all core competencies directly transferable and highly valuable in the field of data science.
