@@ -119,6 +119,61 @@ if (projectsOverviewContent) {
   console.log("Spotlight target for Projects Overview NOT FOUND!"); // Changed to log instead of error for clarity
 }
 
+const homePageMainInner = document.querySelector('.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data)');
+  
+  if (homePageMainInner) {
+    console.log("Home page main inner found, creating FULL WIDTH interactive lines.");
+
+    // Ensure homePageMainInner is a positioning context for the absolute lines
+    if (getComputedStyle(homePageMainInner).position === 'static') {
+        homePageMainInner.style.position = 'relative';
+    }
+    // Ensure content inside is visually on top of lines
+    const homePageContentInner = homePageMainInner.querySelector('.md-content__inner');
+    if (homePageContentInner) {
+        if (getComputedStyle(homePageContentInner).position === 'static') {
+            homePageContentInner.style.position = 'relative';
+        }
+        homePageContentInner.style.zIndex = '2'; // Or higher if needed
+    }
+
+
+    const lineThicknessCss = 2; // Should match width in .decorative-line CSS (e.g., 2px)
+    const gapBetweenLinesPx = 8; // Desired visual gap between lines (e.g., 8px for a 10px cycle)
+    const totalSpacePerLineCycle = lineThicknessCss + gapBetweenLinesPx; // e.g., 2px line + 8px gap = 10px cycle
+
+    // Calculate based on the full width of homePageMainInner
+    const fullWidth = homePageMainInner.offsetWidth;
+    const numberOfLines = Math.floor(fullWidth / totalSpacePerLineCycle);
+
+    console.log(`Home page width: ${fullWidth}px, creating ${numberOfLines} lines with cycle ${totalSpacePerLineCycle}px.`);
+
+    for (let i = 0; i < numberOfLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('decorative-line');
+      // CSS rule .decorative-line will set its width (e.g., 2px) and height (100%)
+      // JS positions the left edge of each line
+      line.style.left = (i * totalSpacePerLineCycle) + 'px'; 
+      line.style.zIndex = '1'; // Ensure lines are behind content, but visible over parent bg
+
+      line.addEventListener('mouseenter', function() {
+        if (!line.classList.contains('is-fading')) { 
+          line.classList.add('is-fading');
+          setTimeout(() => {
+            line.classList.remove('is-fading');
+          }, 1500); // Animation duration
+        }
+      });
+      homePageMainInner.appendChild(line); // Append lines directly to homePageMainInner
+    }
+    console.log(`Created ${numberOfLines} full-width decorative lines.`);
+
+  } else {
+    console.log("Home page .md-main__inner not found for full-width line effects.");
+  }
+
+
+
 // --- End of Page-Specific Logic ---
 console.log("Page-specific condition checks complete."); // This should be the last log inside DOMContentLoaded
 

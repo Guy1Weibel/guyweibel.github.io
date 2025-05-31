@@ -217,23 +217,54 @@ body.page-index p {
    ========================================================================== */
 
 /* --- Home Page --- */
-.md-main__inner:has(h1#welcome) {
-  background-color: #D3D0CB !important; /* Timberwolf  */
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) {
+  background-color: #D3D0CB !important; /* Timberwolf base color */
+  position: relative; 
+  overflow: hidden;   
+  /* NO background-image pattern here anymore */
 }
-/* Text contrast for Home Page () */
-.md-main__inner:has(h1#welcome) .md-content__inner {
-  color: #393e41 !important; /* Main text color - onyx  grey */
+
+/* --- INDIVIDUAL LINE STYLING (will be created by JS) --- */
+.decorative-line {
+  position: absolute; /* Positioned within their parent (now homePageMainInner) */
+  top: 0;
+  height: 100%; /* Full height of the homePageMainInner */
+  width: 10px;    /* Your preferred thickness */
+  background-color: rgba(0, 0, 0, 0.05); /* Line color */
+  opacity: 1;
+  /* pointer-events: auto; /* Ensure they capture mouse events if parent has none */
 }
-.md-main__inner:has(h1#welcome) .md-content__inner h1,
-.md-main__inner:has(h1#welcome) .md-content__inner h2,
-.md-main__inner:has(h1#welcome) .md-content__inner h3,
-.md-main__inner:has(h1#welcome) .md-content__inner h4 {
+
+/* Animation for a single line to fade out and then back in */
+@keyframes individualLineFadeInOut {
+  0%   { opacity: 1; } 
+  25%  { opacity: 0; } 
+  75%  { opacity: 0; } 
+  100% { opacity: 1; } 
+}
+
+.decorative-line.is-fading {
+  animation: individualLineFadeInOut 1.5s ease-in-out forwards; 
+}
+
+
+/* Ensure main content is on top */
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner {
+  color: #393e41 !important; 
+  position: relative; 
+  z-index: 1; 
+}
+
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner h1,
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner h2,
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner h3,
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner h4 {
   color: #111111 !important; /* Headings - slightly darker or different */
 }
-.md-main__inner:has(h1#welcome) .md-content__inner a {
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner a {
   color: #005A9C !important; /* Links - distinct dark blue */
 }
-.md-main__inner:has(h1#welcome) .md-content__inner a:hover {
+.md-main__inner:has(h1#hi-im-guy-weibel-welcome-to-my-journey-in-data) .md-content__inner a:hover {
   color: #003366 !important; /* Links on hover - even darker blue */
 }
 
