@@ -1,6 +1,6 @@
 # My Data Science Projects {: #my-data-science-projects .text-center data-aos="fade-down" }
 
-Below you'll find a selection of my work in data science, biochemistry, and chemical engineering, demonstrating a range of analytical and problem-solving skills. Click on any card to learn more. 
+Click on any card to learn more. 
 {: .text-center data-aos="fade-down" }
 <!-- Changed the call to action text slightly -->
 
@@ -9,10 +9,10 @@ Below you'll find a selection of my work in data science, biochemistry, and chem
 <div class="grid cards" markdown>
 
 
-- <a href="project_gamma.md" class="project-card-link"> <!-- NEW PLACEHOLDER PROJECT -->
+- <a href="ndvi/" class="project-card-link">
     <span class="project-card-content">
-        <h3 class="project-card-title">NVDI/LST vs Race/Income spatial analysis</h3>
-        An analysis of interactions between race and income in the context of NDVI and LST (in Dane County), using spatial data from the US Census Bureau and NASA. 
+        <h3 class="project-card-title">Thermal Inequity Landscapes</h3>
+        A geospatial analysis of heat, vegetation, and socioeconomics in Dane County.
     </span>
   </a>
 
