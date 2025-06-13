@@ -1,11 +1,13 @@
 # Thermal Inequity Landscapes: A Dane County Analysis {: #thermal-inequity-landscapes-a-dane-county-analysis .text-center data-aos="fade-down" }
 <!-- NOTE: The ID will be auto-generated from this H1 title. Ensure your CSS uses this ID if targeting this page specifically. -->
 
-**Collaboration:** Mihir Heda
+**Collaboration:** Mihir Heda  
 {: .text-center data-aos="fade-down" data-aos-delay="100"}
-**Period:** Spring 2024 <!-- Replace with actual dates -->
+
+**Period:** Spring 2025  
 {: .text-center data-aos="fade-down" data-aos-delay="200"}
-**Context:** Geocomputing Capstone Project <!-- Replace with actual context -->
+
+**Context:** Advanced Geocomputing Final Project  
 {: .text-center data-aos="fade-down" data-aos-delay="300"}
 
 ## Project Goal & Motivation {: .text-center}
